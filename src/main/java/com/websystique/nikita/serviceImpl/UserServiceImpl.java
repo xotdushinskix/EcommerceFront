@@ -23,4 +23,16 @@ public class UserServiceImpl implements UserService {
     public User getUserByLogin(String login) throws SQLException {
         return userDao.getUserByLogin(login);
     }
+
+    public void addUser(User user) throws SQLException {
+        userDao.addUser(user);
+    }
+
+    public void editUser(User user) throws SQLException {
+        userDao.editUser(user);
+    }
+
+    public void deleteUser(User user) throws SQLException {
+        userDao.deleteUser(user);
+    }
 }

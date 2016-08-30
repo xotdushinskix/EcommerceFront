@@ -3,17 +3,26 @@ package com.websystique.nikita.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.websystique.nikita.model.User;
+import com.websystique.nikita.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.sql.SQLException;
+
 @Controller
 public class StartController {
+
+	@Autowired
+	UserService userService;
 
 	
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
@@ -27,6 +36,20 @@ public class StartController {
 		model.addAttribute("user", getPrincipal());
 		return "admin";
 	}
+
+
+	@RequestMapping(value = "/admin/add", method = RequestMethod.GET)
+	public String addUser(@ModelAttribute User user, ModelMap model) {
+		return "addUser";
+	}
+
+
+	@RequestMapping(value = "/admin/add", method = RequestMethod.POST)
+	public String addUserFinal(@ModelAttribute User user) throws SQLException {
+		userService.addUser(user);
+		return "redirect:/admin";
+	}
+
 
 	@RequestMapping(value = "/db", method = RequestMethod.GET)
 	public String dbaPage(ModelMap model) {

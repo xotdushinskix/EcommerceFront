@@ -24,7 +24,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"com.spring.nikita.configuration"})
+@ComponentScan({"com.websystique.nikita.configuration"})
 @PropertySource(value = { "classpath:application.properties" })
 public class HibernateConfiguration {
 

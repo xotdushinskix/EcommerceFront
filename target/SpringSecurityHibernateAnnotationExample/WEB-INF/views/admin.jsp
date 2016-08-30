@@ -11,6 +11,7 @@
 	<%--<a href="<c:url value="/logout" />">Logout</a>--%>
 	<form:form action="${pageContext.request.contextPath}/logout" method="post">
 		<input type="submit" value="Logout" />
-	</form:form>
+	</form:form> <br>
+	<a href="<c:url value="/admin/add" />">Add User</a>
 </body>
 </html>
