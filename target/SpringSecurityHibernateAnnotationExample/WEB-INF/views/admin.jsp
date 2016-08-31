@@ -8,7 +8,6 @@
 </head>
 <body>
 	Dear <strong>${user}</strong>, Welcome to Admin Page.
-	<%--<a href="<c:url value="/logout" />">Logout</a>--%>
 	<form:form action="${pageContext.request.contextPath}/logout" method="post">
 		<input type="submit" value="Logout" />
 	</form:form> <br>

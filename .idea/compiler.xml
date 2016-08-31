@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="EcommerceFront" />
         <module name="SpringSecurityHibernateAnnotationExample" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="EcommerceFront" target="1.5" />
       <module name="SpringSecurityHibernateAnnotationExample" target="1.5" />
     </bytecodeTargetLevel>
   </component>

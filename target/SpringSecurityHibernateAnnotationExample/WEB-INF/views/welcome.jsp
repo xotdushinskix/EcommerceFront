@@ -6,6 +6,8 @@
 </head>
 <body>
 	Greeting : ${greeting}
-	This is a welcome page.
+	This is a welcome page.<br>
+	<a href="/admin">Admin page</a><br>
+	<a href="/user">User Page</a>
 </body>
 </html>
