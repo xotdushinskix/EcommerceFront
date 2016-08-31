@@ -14,7 +14,7 @@ import java.sql.SQLException;
 /**
  * Created by FromxSoul on 28.08.2016.
  */
-@Repository
+@Repository("userDao")
 public class UserDaoImpl implements UserDao {
 
     @Autowired

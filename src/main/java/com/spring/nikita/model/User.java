@@ -1,7 +1,9 @@
 package com.spring.nikita.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -35,6 +37,9 @@ public class User {
     @JoinTable(name = "user_roles", joinColumns = {@JoinColumn(name = "user_id")},
         inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Set<Role> roles = new HashSet<Role>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<OrderLines> orderLines = new ArrayList<OrderLines>();
 
     public User() {
 
@@ -95,5 +100,13 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public List<OrderLines> getOrderLines() {
+        return orderLines;
+    }
+
+    public void setOrderLines(List<OrderLines> orderLines) {
+        this.orderLines = orderLines;
     }
 }

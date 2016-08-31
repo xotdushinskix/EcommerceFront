@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.spring.nikita.model.User;
+import com.spring.nikita.service.RoleService;
 import com.spring.nikita.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -19,11 +20,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.sql.SQLException;
 
 @Controller
-public class StartController {
+public class UserController {
 
 	@Autowired
 	UserService userService;
 
+	@Autowired
+	RoleService roleService;
 	
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
@@ -50,6 +53,7 @@ public class StartController {
 
 	@RequestMapping(value = "/admin/add", method = RequestMethod.POST)
 	public String addUserFinal(@ModelAttribute User user) throws SQLException {
+		user.getRoles().add(roleService.getRoleByName(2));
 		userService.addUser(user);
 		return "redirect:/admin";
 	}
