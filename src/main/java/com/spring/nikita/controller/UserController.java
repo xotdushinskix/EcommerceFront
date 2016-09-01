@@ -23,10 +23,10 @@ import java.sql.SQLException;
 public class UserController {
 
 	@Autowired
-	UserService userService;
+	private UserService userService;
 
 	@Autowired
-	RoleService roleService;
+	private RoleService roleService;
 	
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
