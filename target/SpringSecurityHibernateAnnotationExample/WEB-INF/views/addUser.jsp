@@ -13,12 +13,11 @@
 </head>
 <body>
 
-<form:form action="${pageContext.request.contextPath}/admin/add" modelAttribute="user" method="post">
-  <form:input path="firstName" /><br>
-  <form:input path="lastName" /><br>
-  <form:input path="login" /><br>
-  <form:input path="password" /><br>
-
+<form:form action="${pageContext.request.contextPath}/registration" modelAttribute="user" method="post">
+  First Name: <form:input path="firstName" /><br>
+  Second Name: <form:input path="lastName" /><br>
+  Login: <form:input path="login" /><br>
+  Password: <form:password path="password" /><br>
   <input type="submit" value="Add" />
 </form:form>
 </body>

@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>--%>
 <%--
   Created by IntelliJ IDEA.
   User: nikita
@@ -44,6 +45,14 @@
         </c:forEach>
         </tbody>
     </table>
+
+
+
+    <p style="position: absolute; top: 0.5%; right: 3%;"><c:if test="${pageContext.request.userPrincipal.name == null}" > <a href="/login">Login</a> </c:if></p>
+    <p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
+    <p style="position: absolute; top: 0.5%; right: 8%;"><c:if test="${pageContext.request.userPrincipal.name != null}" > ${pageContext.request.userPrincipal.name} </c:if></p>
+    <p style="position: absolute; top: 0.5%; right: 8%;"><c:if test="${pageContext.request.userPrincipal.name == null}" > <a href="/registration">Registration</a> </c:if></p>
+    <%--<p style="position: absolute; top: 0.5%; right: 3%;"><c:if test="${pageContext.request.userPrincipal.name != null}" >/> ${userName} </c:if></p>--%>
 
 
 </body>

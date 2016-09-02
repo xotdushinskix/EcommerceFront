@@ -16,6 +16,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.SQLException;
 
@@ -44,18 +45,23 @@ public class UserController {
 
 
 
-	@RequestMapping(value = "/admin/add", method = RequestMethod.GET)
-	public String addUser(@ModelAttribute User user, ModelMap model) {
+	@RequestMapping(value = "/registration", method = RequestMethod.GET)
+	public String addUser(@ModelAttribute User user) {
 		return "addUser";
 	}
 
 
 
-	@RequestMapping(value = "/admin/add", method = RequestMethod.POST)
-	public String addUserFinal(@ModelAttribute User user) throws SQLException {
-		user.getRoles().add(roleService.getRoleByName(2));
-		userService.addUser(user);
-		return "redirect:/admin";
+	@RequestMapping(value = "/registration", method = RequestMethod.POST)
+	public String addUserFinal(@ModelAttribute User user, @RequestParam("password")String password1,
+							   @RequestParam("password")String password2) throws SQLException {
+		if (password1.equals(password2)) {
+			user.getRoles().add(roleService.getRoleByName(2));
+			userService.addUser(user);
+		} else {
+			System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+		}
+		return "redirect:/";
 	}
 
 
@@ -89,7 +95,7 @@ public class UserController {
 		if (authentication != null) {
 			new SecurityContextLogoutHandler().logout(request, response, authentication);
 		}
-		return "redirect:/login";
+		return "redirect:/";
 	}
 
 

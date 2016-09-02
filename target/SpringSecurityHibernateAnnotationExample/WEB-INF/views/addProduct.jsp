@@ -12,7 +12,7 @@
     <title>Add product</title>
 </head>
 <body>
-    <form:form action="${pageContext.request.contextPath}/main/add" modelAttribute="product" method="post">
+    <form:form action="${pageContext.request.contextPath}/add" modelAttribute="product" method="post">
         <form:input path="productBrand" /><br>
         <form:input path="productModel" /><br>
         <form:input path="productStock" /><br>
