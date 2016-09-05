@@ -1,5 +1,7 @@
 package com.spring.nikita.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -18,15 +20,19 @@ public class User {
     @Column(name = "user_id")
     private int id;
 
+    @NotEmpty(message = "Please, enter your first name")
     @Column(name = "first_name")
     private String firstName;
 
+    @NotEmpty(message = "Please, enter your last name")
     @Column(name = "last_name")
     private String lastName;
 
+    @NotEmpty(message = "Please, enter your login")
     @Column(name = "login", unique = true)
     private String login;
 
+    @NotEmpty(message = "Please, enter your password")
     @Column(name = "password")
     private String password;
 

@@ -7,7 +7,7 @@
 	<title>AccessDenied page</title>
 </head>
 <body>
-	Dear <strong>${user}</strong>, You are not authorized to access this page
+	Dear <strong>${userName}</strong>, You are not authorized to access this page
 	<%--<a href="<c:url value="/logout" />">Logout</a>--%>
 	<form:form action="${pageContext.request.contextPath}/logout" method="post">
 		<input type="submit" value="Logout" />

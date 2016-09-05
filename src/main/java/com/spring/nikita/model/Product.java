@@ -1,5 +1,7 @@
 package com.spring.nikita.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,7 @@ public class Product {
     @Column(name = "product_id")
     private int productId;
 
+    @NotEmpty(message = "Please, enter product brand")
     @Column(name = "product_brand")
     private String productBrand;
 

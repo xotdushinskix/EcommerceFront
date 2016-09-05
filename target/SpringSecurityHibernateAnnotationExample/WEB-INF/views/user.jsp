@@ -7,7 +7,7 @@
 	<title>DBA page</title>
 </head>
 <body>
-	Dear <strong>${user}</strong>, Welcome to User Page.
+	Dear <strong>${userName}</strong>, Welcome to User Page.
 	<form:form action="${pageContext.request.contextPath}/logout" method="post">
 		<input type="submit" value="Logout" />
 	</form:form>

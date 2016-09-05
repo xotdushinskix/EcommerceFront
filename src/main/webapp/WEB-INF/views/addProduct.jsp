@@ -12,12 +12,27 @@
     <title>Add product</title>
 </head>
 <body>
-    <form:form action="${pageContext.request.contextPath}/add" modelAttribute="product" method="post">
-        <form:input path="productBrand" /><br>
-        <form:input path="productModel" /><br>
-        <form:input path="productStock" /><br>
-        <form:input path="productMPN" /><br>
-
+    <form:form action="${pageContext.request.contextPath}/main/add" modelAttribute="product" method="post">
+        <table>
+            <tr>
+                <td>Product brand:</td>
+                <td><form:input path="productBrand" /></td>
+                <td><form:errors path="productBrand" /></td>
+            </tr>
+            <tr>
+                <td><form:input path="productModel" /></td>
+                <td><form:errors path="productModel" /></td>
+            </tr>
+            <tr>
+                <td><form:input path="productStock" /></td>
+                <td><form:errors path="productStock" /></td>
+            </tr>
+            <tr>
+                <td><form:input path="productMPN" /></td>
+                <td><form:errors path="productMPN" /></td>
+            </tr>
+        </table>
+        <br>
         <input type="submit" value="Add" />
     </form:form>
 </body>

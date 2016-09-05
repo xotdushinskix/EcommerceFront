@@ -7,7 +7,7 @@
 	<title>Admin page</title>
 </head>
 <body>
-	Dear <strong>${user}</strong>, Welcome to Admin Page.
+	Dear <strong>${userName}</strong>, Welcome to Admin Page.
 	<form:form action="${pageContext.request.contextPath}/logout" method="post">
 		<input type="submit" value="Logout" />
 	</form:form> <br>

@@ -2,6 +2,7 @@ package com.spring.nikita.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import com.spring.nikita.model.User;
 import com.spring.nikita.service.RoleService;
@@ -12,26 +13,25 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 
 @Controller
-public class UserController {
+public class UserController extends GetUserName{
 
 	@Autowired
 	private UserService userService;
 
 	@Autowired
 	private RoleService roleService;
-	
-	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
-	public String homePage(ModelMap model) {
-		model.addAttribute("greeting", "Hi, Welcome to mysite");
+
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String homePage() {
 		return "welcome";
 	}
 
@@ -39,7 +39,11 @@ public class UserController {
 
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String adminPage(ModelMap model) throws SQLException {
-		model.addAttribute("user", getUserName());
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+			model.addAttribute("userName", super.getUserName());
+		}
+		model.addAttribute("userName", getUserName());
 		return "admin";
 	}
 
@@ -68,7 +72,10 @@ public class UserController {
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public String dbaPage(ModelMap model) throws SQLException {
-		model.addAttribute("user", getUserName());
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+			model.addAttribute("userName", super.getUserName());
+		}
 		return "user";
 	}
 
@@ -76,7 +83,10 @@ public class UserController {
 
 	@RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
 	public String accessDeniedPage(ModelMap model) throws SQLException {
-		model.addAttribute("user", getUserName());
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+			model.addAttribute("userName", super.getUserName());
+		}
 		return "accessDenied";
 	}
 
@@ -100,26 +110,52 @@ public class UserController {
 
 
 
-	private String getPrincipal() {
-		String userLogin = null;
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-			userLogin = ((UserDetails)principal).getUsername();
+	@RequestMapping(value = "/info/{login}", method = RequestMethod.GET)
+	public String myInfo(@ModelAttribute User user, @PathVariable("login") String login, Model model) throws SQLException {
+		model.addAttribute("userLog", userService.getUserByLogin(login));
+		return "info";
+	}
+
+
+	@RequestMapping(value = "/info/{login}", method = RequestMethod.POST)
+	public String myInfoEdit(@Valid @ModelAttribute User user, BindingResult result) throws SQLException {
+		if (result.hasErrors()) {
+			return "info";
 		} else {
-			userLogin = principal.toString();
+			userService.editUser(user);
+			return "redirect:/";
 		}
-		return userLogin;
 	}
 
 
 
-	private String getUserName() throws SQLException {
-		String userName = null;
-		String login = getPrincipal();
-		User helper = userService.getUserByLogin(login);
-		userName = helper.getFirstName();
-		return userName;
+	@RequestMapping(value = "/my_page", method = RequestMethod.GET)
+	public String privatePage(@ModelAttribute User user, Model model) throws SQLException {
+//		login = super.getPrincipal();
+//		model.addAttribute("user", userService.getUserByLogin(login));
+
+		model.addAttribute("firstName", user.getFirstName());
+		model.addAttribute("lastName", user.getLastName());
+		model.addAttribute("login", user.getLogin());
+		model.addAttribute("password", user.getPassword());
+		return "myPage";
 	}
+
+
+
+	@RequestMapping(value = "/my_page", method = RequestMethod.POST)
+	public String editPrivatePage(@ModelAttribute User user, BindingResult result) throws SQLException {
+		if (result.hasErrors()) {
+			return "myPage";
+		} else {
+			String login = super.getPrincipal();
+			user = userService.getUserByLogin(login);
+			userService.editUser(user);
+			return "redirect:/my_page";
+		}
+	}
+
+
 
 
 }
