@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by FromxSoul on 28.08.2016.
@@ -19,6 +20,24 @@ public class UserDaoImpl implements UserDao {
 
     @Autowired
     private SessionFactory sessionFactory;
+
+
+    public User getUserById(int id) throws SQLException {
+        Session session = null;
+        User user = null;
+        try {
+            session = sessionFactory.openSession();
+            user = (User) session.get(User.class, id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if ((session != null) && (session.isOpen())) {
+                session.close();
+            }
+        }
+        return user;
+    }
+
 
 
     public User getUserByLogin(String login) throws SQLException {
@@ -59,6 +78,7 @@ public class UserDaoImpl implements UserDao {
     public void editUser(User user) throws SQLException {
         Session session = null;
         try {
+
             session = sessionFactory.openSession();
             session.beginTransaction();
             session.update(user);
@@ -87,5 +107,23 @@ public class UserDaoImpl implements UserDao {
                 session.close();
             }
         }
+    }
+
+
+
+    public List<User> getAllUsers() throws SQLException {
+        Session session = null;
+        List<User>users = null;
+        try {
+            session = sessionFactory.openSession();
+            users = session.createCriteria(User.class).list();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if ((session != null) && (session.isOpen())) {
+                session.close();
+            }
+        }
+        return users;
     }
 }

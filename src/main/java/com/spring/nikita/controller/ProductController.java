@@ -26,6 +26,8 @@ public class ProductController extends GetUserName{
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String allProducts(Model model) throws SQLException {
@@ -34,7 +36,10 @@ public class ProductController extends GetUserName{
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
             model.addAttribute("userName", super.getUserName());
-            model.addAttribute("userLogin", super.getPrincipal());
+            //model.addAttribute("userLogin", super.getPrincipal());
+            model.addAttribute("id", super.getUserId());
+            User user = userService.getUserByLogin(super.getPrincipal());
+            model.addAttribute("user", user);
         }
         return "mainProducts";
     }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by FromxSoul on 28.08.2016.
@@ -19,6 +20,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
+
+    public User getUserById(int id) throws SQLException {
+        return userDao.getUserById(id);
+    }
 
     public User getUserByLogin(String login) throws SQLException {
         return userDao.getUserByLogin(login);
@@ -34,5 +39,9 @@ public class UserServiceImpl implements UserService {
 
     public void deleteUser(User user) throws SQLException {
         userDao.deleteUser(user);
+    }
+
+    public List<User> getAllUsers() throws SQLException {
+        return userDao.getAllUsers();
     }
 }

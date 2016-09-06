@@ -2,17 +2,17 @@
 <%--
   Created by IntelliJ IDEA.
   User: nikita
-  Date: 05.09.16
-  Time: 17:43
+  Date: 06.09.16
+  Time: 12:26
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Info</title>
+    <title>User Info</title>
 </head>
 <body>
-    <form:form action="${pageContext.request.contextPath}/info/${login}" commandName="user" method="post">
+    <form:form action="${pageContext.request.contextPath}/info/edit/${userId.id}" commandName="userInfo" method="post">
         <table>
             <tr>
                 <td>First name:</td>
@@ -31,7 +31,8 @@
             </tr>
             <tr>
                 <td>Password:</td>
-                <td><form:password path="password"/></td>
+                <%--<td><form:password path="password"/></td>--%>
+                <td><form:input path="password"/></td>
                 <td><form:errors path="password"/></td>
             </tr>
         </table>

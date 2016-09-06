@@ -52,9 +52,7 @@
     <p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
     <%--<p style="position: absolute; top: 0.5%; right: 8%;"><c:if test="${pageContext.request.userPrincipal.name != null}" > ${pageContext.request.userPrincipal.name} </c:if></p>--%>
     <p style="position: absolute; top: 0.5%; right: 6%;"><c:if test="${pageContext.request.userPrincipal.name == null}" > <a href="/registration">Registration</a> </c:if></p>
-    <p style="position: absolute; top: 0.1%; right: 8%;"><c:if test="${pageContext.request.userPrincipal.name != null}" > <strong>Welcome, <a href="/my_page">${userName}</a></strong></c:if></p>
-
-    <p style="position: absolute; top: 5%; right: 8%;"><c:if test="${pageContext.request.userPrincipal.name != null}" > <strong> <a href="/info/${userLogin}">My info</a></strong></c:if></p>
+    <p style="position: absolute; top: 0.1%; right: 8%;"><c:if test="${pageContext.request.userPrincipal.name != null}" > <strong>Welcome, <a href="/info">${userName}</a></strong></c:if></p>
 
 
 

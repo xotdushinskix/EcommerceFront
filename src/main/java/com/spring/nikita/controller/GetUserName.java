@@ -39,4 +39,14 @@ public class GetUserName {
         return userName;
     }
 
+
+
+    protected int getUserId() throws SQLException {
+        int id = 0;
+        String login = getPrincipal();
+        User helper = userService.getUserByLogin(login);
+        id = helper.getId();
+        return id;
+    }
+
 }

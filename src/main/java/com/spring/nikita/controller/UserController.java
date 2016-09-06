@@ -110,52 +110,78 @@ public class UserController extends GetUserName{
 
 
 
-	@RequestMapping(value = "/info/{login}", method = RequestMethod.GET)
-	public String myInfo(@ModelAttribute User user, @PathVariable("login") String login, Model model) throws SQLException {
-		model.addAttribute("userLog", userService.getUserByLogin(login));
-		return "info";
-	}
-
-
-	@RequestMapping(value = "/info/{login}", method = RequestMethod.POST)
-	public String myInfoEdit(@Valid @ModelAttribute User user, BindingResult result) throws SQLException {
-		if (result.hasErrors()) {
-			return "info";
-		} else {
-			userService.editUser(user);
-			return "redirect:/";
-		}
-	}
-
-
-
-	@RequestMapping(value = "/my_page", method = RequestMethod.GET)
-	public String privatePage(@ModelAttribute User user, Model model) throws SQLException {
-//		login = super.getPrincipal();
-//		model.addAttribute("user", userService.getUserByLogin(login));
-
-		model.addAttribute("firstName", user.getFirstName());
-		model.addAttribute("lastName", user.getLastName());
+	@RequestMapping(value = "/info", method = RequestMethod.GET)
+	public String userInfo(Model model, @ModelAttribute User user) throws SQLException {
+		String login = super.getPrincipal();
+		user = userService.getUserByLogin(login);
+		model.addAttribute("userId", user);
+		model.addAttribute("fName", user.getFirstName());
+		model.addAttribute("lName", user.getLastName());
 		model.addAttribute("login", user.getLogin());
-		model.addAttribute("password", user.getPassword());
-		return "myPage";
+		return "infoPage";
 	}
 
 
 
-	@RequestMapping(value = "/my_page", method = RequestMethod.POST)
-	public String editPrivatePage(@ModelAttribute User user, BindingResult result) throws SQLException {
+	@RequestMapping(value = "/info/edit/{id}", method = RequestMethod.GET)
+	public String showEditUserInfo(Model model, @PathVariable("id") int id, @ModelAttribute User user) throws SQLException {
+		String login = super.getPrincipal();
+		user = userService.getUserByLogin(login);
+		model.addAttribute("userId", user);
+		model.addAttribute("userInfo", userService.getUserById(id));
+		return "userEditInfo";
+	}
+
+
+
+	@RequestMapping(value = "/info/edit/{id}", method = RequestMethod.POST)
+	public String editUserInfo(@Valid @ModelAttribute User user, BindingResult result) throws SQLException {
 		if (result.hasErrors()) {
-			return "myPage";
-		} else {
-			String login = super.getPrincipal();
-			user = userService.getUserByLogin(login);
-			userService.editUser(user);
-			return "redirect:/my_page";
+			return "userEditInfo";
 		}
+		System.out.println();
+		System.out.println(user.getLogin());
+		System.out.println();
+		userService.editUser(user);
+		return "redirect:/info";
 	}
 
 
 
+	@RequestMapping(value = "/info/edit/password/{id}", method = RequestMethod.GET)
+	public String editPassword(@ModelAttribute User user, Model model) throws SQLException {
+		String login = super.getPrincipal();
+		user = userService.getUserByLogin(login);
+		model.addAttribute("userId", user);
+		return "editUserPassword";
+	}
+
+
+
+	@RequestMapping(value = "/info/edit/password/{id}", method = RequestMethod.POST)
+	public String postEditPassword(@ModelAttribute User user, @RequestParam("currentPassword") String password,
+								   @RequestParam("newPSWRD") String newPassword, Model model,
+								   @RequestParam("cnfrmPSWRD") String confirmPassword) throws SQLException {
+		String login = super.getPrincipal();
+		user = userService.getUserByLogin(login);
+		if (password.equals(user.getPassword())) {
+			if (newPassword.equals(confirmPassword)) {
+				userService.editUser(user);
+			} else {
+				String nonEqualsPasswords = "Your confirm password is not equal new password";
+				model.addAttribute("message2", nonEqualsPasswords);
+				return "editUserPassword";
+			}
+		} else {
+			String invalidCurrentPassword = "You have enter invalid current password";
+			model.addAttribute("message1", invalidCurrentPassword);
+			return "editUserPassword";
+		}
+
+		System.out.println(password);
+		System.out.println(newPassword);
+		System.out.println(confirmPassword);
+		return "redirect:/info";
+	}
 
 }
