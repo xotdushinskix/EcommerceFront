@@ -8,7 +8,205 @@
   <packaging>war</packaging>
 
   <name>EcommerceFront</name>
-  
+
+
+
+	<!--<dependencies>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-core &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>spring-core</artifactId>-->
+			<!--<version>4.1.6.RELEASE</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-webmvc &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>spring-webmvc</artifactId>-->
+			<!--<version>4.1.6.RELEASE</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-web &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>spring-web</artifactId>-->
+			<!--<version>4.1.6.RELEASE</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-tx &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>spring-tx</artifactId>-->
+			<!--<version>4.1.6.RELEASE</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-orm &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>spring-orm</artifactId>-->
+			<!--<version>4.2.6.RELEASE</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-context &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>spring-context</artifactId>-->
+			<!--<version>4.1.6.RELEASE</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.security/spring-security-core &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.security</groupId>-->
+			<!--<artifactId>spring-security-core</artifactId>-->
+			<!--<version>4.0.3.RELEASE</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.security/spring-security-web &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.security</groupId>-->
+			<!--<artifactId>spring-security-web</artifactId>-->
+			<!--<version>4.0.3.RELEASE</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.security/spring-security-config &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.security</groupId>-->
+			<!--<artifactId>spring-security-config</artifactId>-->
+			<!--<version>4.0.3.RELEASE</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.security</groupId>-->
+			<!--<artifactId>spring-security-taglibs</artifactId>-->
+			<!--<version>4.0.4.RELEASE</version>-->
+		<!--</dependency>-->
+
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate/hibernate-core &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.hibernate</groupId>-->
+			<!--<artifactId>hibernate-core</artifactId>-->
+			<!--<version>5.1.0.Final</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate/hibernate-validator &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.hibernate</groupId>-->
+			<!--<artifactId>hibernate-validator</artifactId>-->
+			<!--<version>5.2.4.Final</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate/hibernate-annotations &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.hibernate</groupId>-->
+			<!--<artifactId>hibernate-annotations</artifactId>-->
+			<!--<version>3.4.0.GA</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>org.hibernate.javax.persistence</groupId>-->
+			<!--<artifactId>hibernate-jpa-2.0-api</artifactId>-->
+			<!--<version>1.0.1.Final</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/mysql/mysql-connector-java &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>mysql</groupId>-->
+			<!--<artifactId>mysql-connector-java</artifactId>-->
+			<!--<version>5.1.38</version>-->
+		<!--</dependency>-->
+
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>commons-dbcp</groupId>-->
+			<!--<artifactId>commons-dbcp</artifactId>-->
+			<!--<version>1.4</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/javax.servlet/jstl &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>javax.servlet</groupId>-->
+			<!--<artifactId>jstl</artifactId>-->
+			<!--<version>1.2</version>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/javax.servlet/servlet-api &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>javax.servlet</groupId>-->
+			<!--<artifactId>servlet-api</artifactId>-->
+			<!--<version>2.5</version>-->
+		<!--</dependency>-->
+
+
+		<!--<dependency>-->
+			<!--<groupId>cglib</groupId>-->
+			<!--<artifactId>cglib</artifactId>-->
+			<!--<version>2.2.2</version>-->
+		<!--</dependency>-->
+
+		<!--<dependency>-->
+			<!--<groupId>javax.servlet</groupId>-->
+			<!--<artifactId>javax.servlet-api</artifactId>-->
+			<!--<version>3.1.0</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>javax.servlet.jsp</groupId>-->
+			<!--<artifactId>javax.servlet.jsp-api</artifactId>-->
+			<!--<version>2.3.1</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>javax.servlet</groupId>-->
+			<!--<artifactId>jstl</artifactId>-->
+			<!--<version>1.2</version>-->
+		<!--</dependency>-->
+
+		<!--<dependency>-->
+			<!--<groupId>javax.servlet</groupId>-->
+			<!--<artifactId>servlet-api</artifactId>-->
+			<!--<version>2.5</version>-->
+			<!--<scope>provided</scope>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>javax.servlet.jsp</groupId>-->
+			<!--<artifactId>jsp-api</artifactId>-->
+			<!--<version>2.1</version>-->
+			<!--<scope>provided</scope>-->
+		<!--</dependency>-->
+
+		<!--&lt;!&ndash; https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp &ndash;&gt;-->
+		<!--<dependency>-->
+			<!--<groupId>commons-dbcp</groupId>-->
+			<!--<artifactId>commons-dbcp</artifactId>-->
+			<!--<version>1.4</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>spring-test</artifactId>-->
+			<!--<version>4.1.1.RELEASE</version>-->
+		<!--</dependency>-->
+
+		<!--<dependency>-->
+			<!--<groupId>javax.el</groupId>-->
+			<!--<artifactId>javax.el-api</artifactId>-->
+			<!--<version>3.0.0</version>-->
+		<!--</dependency>-->
+
+
+
+	<!--</dependencies>-->
+
+
+
+
+
+
+
+
+
   	<properties>
 		<springframework.version>4.1.6.RELEASE</springframework.version>
 		<springsecurity.version>4.0.1.RELEASE</springsecurity.version>
@@ -17,7 +215,7 @@
 	</properties>
 
 	<dependencies>
-	
+
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -44,7 +242,7 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
-		
+
 
 		<!-- Spring Security -->
 		<dependency>
@@ -80,18 +278,36 @@
 			<version>${hibernate.version}</version>
 		</dependency>
 
+		<!--<dependency>-->
+			<!--<groupId>org.hibernate.javax.persistence</groupId>-->
+			<!--<artifactId>hibernate-jpa-2.1-api</artifactId>-->
+			<!--<version>1.0.0.Final</version>-->
+		<!--</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.1-api</artifactId>
-			<version>1.0.0.Final</version>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
 		</dependency>
 
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.2.0.Final</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
+
+
 
 		<!-- MySQL -->
 		<dependency>
@@ -116,18 +332,18 @@
 			<version>1.2</version>
 		</dependency>
 
-		<!--<dependency>-->
-			<!--<groupId>javax.servlet</groupId>-->
-			<!--<artifactId>servlet-api</artifactId>-->
-			<!--<version>2.5</version>-->
-			<!--<scope>provided</scope>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>javax.servlet.jsp</groupId>-->
-			<!--<artifactId>jsp-api</artifactId>-->
-			<!--<version>2.1</version>-->
-			<!--<scope>provided</scope>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
 		<dependency>
@@ -141,10 +357,19 @@
 			<version>4.1.1.RELEASE</version>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
+
 
 
 
 	</dependencies>
+
+
 
 	<build>
 		<pluginManagement>

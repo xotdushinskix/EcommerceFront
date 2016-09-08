@@ -116,14 +116,33 @@ public class OrderLinesDaoImpl implements OrderLinesDao {
 
 
 
-    public List<OrderLines> getAllUserLineByRequiredUserLogin(String login) throws SQLException {
+    public List<OrderLines> getAllUserLineByRequiredUserId(int id) throws SQLException {
         List<OrderLines>orderLines = null;
         Session session = null;
         try {
             session = sessionFactory.openSession();
             Criteria criteria = session.createCriteria(OrderLines.class)
-                    .add(Restrictions.like("login", login))
+                    .add(Restrictions.like("id", id))
                     .add(Restrictions.isNotNull("orderFinal.orderId"));
+            orderLines = criteria.list();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if ((session != null) && (session.isOpen())) {
+                session.close();
+            }
+        }
+        return orderLines;
+    }
+
+    public List<OrderLines> getNotApprovedLineByUserId(int id) throws SQLException {
+        List<OrderLines> orderLines = null;
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            Criteria criteria = session.createCriteria(OrderLines.class)
+                    .add(Restrictions.eq("user.id", id))
+                    .add(Restrictions.isNull("orderFinal.orderId"));
             orderLines = criteria.list();
         } catch (Exception e) {
             e.printStackTrace();

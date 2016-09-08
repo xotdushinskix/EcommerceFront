@@ -40,6 +40,9 @@ public class ProductController extends GetUserName{
             model.addAttribute("id", super.getUserId());
             User user = userService.getUserByLogin(super.getPrincipal());
             model.addAttribute("user", user);
+
+
+            model.addAttribute("allUsers", userService.getAllUsers());
         }
         return "mainProducts";
     }

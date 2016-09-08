@@ -22,12 +22,14 @@ public class Product {
     @Column(name = "product_brand")
     private String productBrand;
 
+    @NotEmpty(message = "Please, enter product model")
     @Column(name = "product_model")
     private String productModel;
 
     @Column(name = "stock")
     private int productStock;
 
+    @NotEmpty(message = "Please, enter mpn")
     @Column(name = "product_mpn", unique = true)
     private int productMPN;
 

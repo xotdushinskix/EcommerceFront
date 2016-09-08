@@ -12,7 +12,7 @@
     <title>User Info</title>
 </head>
 <body>
-    <form:form action="${pageContext.request.contextPath}/info/edit/${userId.id}" commandName="userInfo" method="post">
+    <form:form action="${pageContext.request.contextPath}/info/edit/${user.id}" commandName="user" method="post">
         <table>
             <tr>
                 <td>First name:</td>

@@ -30,7 +30,7 @@
     </table>
     <br>
     <a href="/info/edit/${userId.id}">Edit your info</a> <br>
-    <a href="/info/edit/password/${userId.id}">Edit your password</a>
+    <a href="/info/edit/password">Edit your password</a>
 
 </body>
 </html>
