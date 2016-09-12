@@ -7,6 +7,7 @@ import java.util.List;
 import com.spring.nikita.dao.UserDao;
 import com.spring.nikita.model.Role;
 import com.spring.nikita.model.User;
+import com.spring.nikita.model.UserRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -42,9 +43,11 @@ public class CustomUserDetailsService implements UserDetailsService{
 	private List<GrantedAuthority> getGrantedAuthorities(User user){
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		
-		for(Role role : user.getRoles()){
-			authorities.add(new SimpleGrantedAuthority("ROLE_"+role.getRoleType()));
+		for(UserRoles userRoles : user.getUserRoles()){
+			authorities.add(new SimpleGrantedAuthority("ROLE_"+userRoles.getRole().getRoleType()));
 		}
+
+
 		return authorities;
 	}
 	

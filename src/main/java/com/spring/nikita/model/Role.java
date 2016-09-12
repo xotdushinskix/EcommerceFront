@@ -1,14 +1,16 @@
 package com.spring.nikita.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
  * Created by nikita on 30.08.16.
  */
 @Entity
-@Table(name = "role")
+@Table(name = "role_user")
 public class Role {
 
     @Id
@@ -19,8 +21,9 @@ public class Role {
     @Column(name = "role_type")
     private String roleType = RoleType.USER.getRoleType();
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users = new HashSet<User>();
+    @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
+    private List<UserRoles>userRoles = new ArrayList<UserRoles>();
+
 
     public Role() {
 
@@ -43,11 +46,11 @@ public class Role {
         this.roleType = roleType;
     }
 
-    public Set<User> getUsers() {
-        return users;
+    public List<UserRoles> getUserRoles() {
+        return userRoles;
     }
 
-    public void setUsers(Set<User> users) {
-        this.users = users;
+    public void setUserRoles(List<UserRoles> userRoles) {
+        this.userRoles = userRoles;
     }
 }

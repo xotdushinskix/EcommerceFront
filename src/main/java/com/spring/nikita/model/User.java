@@ -1,5 +1,6 @@
 package com.spring.nikita.model;
 
+import org.hibernate.annotations.Cascade;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -21,29 +22,27 @@ public class User {
     @Column(name = "user_id")
     private int id;
 
-    @NotEmpty(message = "Please, enter your first name")
+    //@NotNull(message = "Please, enter your first name")
     @Column(name = "first_name")
     private String firstName;
 
-    @NotEmpty(message = "Please, enter your last name")
+    //@NotNull(message = "Please, enter your last name")
     @Column(name = "last_name")
     private String lastName;
 
-    @NotEmpty(message = "Please, enter your login")
+    //@NotNull(message = "Please, enter your login")
     @Column(name = "login", unique = true)
     private String login;
 
-    @NotEmpty(message = "Please, enter your password")
+    //@NotNull(message = "Please, enter your password")
     @Column(name = "password")
     private String password;
 
     @Column(name = "position")
     private String position = UserPosition.ACTIVE.getPosition();
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "user_roles", joinColumns = {@JoinColumn(name = "user_id")},
-        inverseJoinColumns = {@JoinColumn(name = "role_id")})
-    private Set<Role> roles = new HashSet<Role>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<UserRoles> userRoles = new ArrayList<UserRoles>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<OrderLines> orderLines = new ArrayList<OrderLines>();
@@ -101,12 +100,13 @@ public class User {
         this.position = position;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+
+    public List<UserRoles> getUserRoles() {
+        return userRoles;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setUserRoles(List<UserRoles> userRoles) {
+        this.userRoles = userRoles;
     }
 
     public List<OrderLines> getOrderLines() {

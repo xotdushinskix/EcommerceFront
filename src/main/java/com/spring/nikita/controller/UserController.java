@@ -2,7 +2,7 @@ package com.spring.nikita.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
+//import javax.validation.Valid;
 
 import com.spring.nikita.model.User;
 import com.spring.nikita.service.RoleService;
@@ -53,18 +53,18 @@ public class UserController extends GetUserName {
 		return "addUser";
 	}
 
-
-	@RequestMapping(value = "/registration", method = RequestMethod.POST)
-	public String addUserFinal(@ModelAttribute User user, @RequestParam("password") String password1,
-							   @RequestParam("password") String password2) throws SQLException {
-		if (password1.equals(password2)) {
-			user.getRoles().add(roleService.getRoleByName(2));
-			userService.addUser(user);
-		} else {
-			System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
-		}
-		return "redirect:/";
-	}
+//
+//	@RequestMapping(value = "/registration", method = RequestMethod.POST)
+//	public String addUserFinal(@ModelAttribute User user, @RequestParam("password") String password1,
+//							   @RequestParam("password") String password2) throws SQLException {
+//		if (password1.equals(password2)) {
+//			user.getRoles().add(roleService.getRoleByName(2));
+//			userService.addUser(user);
+//		} else {
+//			System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+//		}
+//		return "redirect:/";
+//	}
 
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
@@ -135,6 +135,7 @@ public class UserController extends GetUserName {
 	}
 
 
+
 	@RequestMapping(value = "/info/edit/password", method = RequestMethod.GET)
 	public String editPassword(@ModelAttribute User user, Model model) throws SQLException {
 //		String login = super.getPrincipal();
@@ -145,7 +146,7 @@ public class UserController extends GetUserName {
 
 
 	@RequestMapping(value = "/info/edit/password", method = RequestMethod.POST)
-	public String postEditPass(@Valid @ModelAttribute User user, BindingResult result) {
+	public String postEditPass(@ModelAttribute User user, BindingResult result) {
 		if (result.hasErrors()) {
 			return "editUserPassword";
 		}

@@ -78,7 +78,6 @@ public class UserDaoImpl implements UserDao {
     public void editUser(User user) throws SQLException {
         Session session = null;
         try {
-
             session = sessionFactory.openSession();
             session.beginTransaction();
             session.update(user);

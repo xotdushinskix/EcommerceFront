@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="EcommerceFront:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="SpringSecurityHibernateAnnotationExample.war">
+    <root id="archive" name="EcommerceFront.war">
       <element id="artifact" artifact-name="EcommerceFront:war exploded" />
     </root>
   </artifact>
