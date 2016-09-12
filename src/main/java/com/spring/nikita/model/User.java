@@ -1,6 +1,7 @@
 package com.spring.nikita.model;
 
 import org.hibernate.annotations.Cascade;
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -22,19 +23,19 @@ public class User {
     @Column(name = "user_id")
     private int id;
 
-    //@NotNull(message = "Please, enter your first name")
+    @NotBlank(message = "Please, enter your first name")
     @Column(name = "first_name")
     private String firstName;
 
-    //@NotNull(message = "Please, enter your last name")
+    @NotBlank(message = "Please, enter your last name")
     @Column(name = "last_name")
     private String lastName;
 
-    //@NotNull(message = "Please, enter your login")
+    @NotBlank(message = "Please, enter your login")
     @Column(name = "login", unique = true)
     private String login;
 
-    //@NotNull(message = "Please, enter your password")
+    @NotBlank(message = "Please, enter your password")
     @Column(name = "password")
     private String password;
 
