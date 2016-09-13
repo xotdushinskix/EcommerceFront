@@ -1,15 +1,10 @@
 package com.spring.nikita.model;
 
-import org.hibernate.annotations.Cascade;
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 
 /**
  * Created by nikita on 30.08.16.
@@ -23,7 +18,7 @@ public class User {
     @Column(name = "user_id")
     private int id;
 
-    @NotBlank(message = "Please, enter your first name")
+    //@NotBlank(message = "Please, enter your first name")
     @Column(name = "first_name")
     private String firstName;
 

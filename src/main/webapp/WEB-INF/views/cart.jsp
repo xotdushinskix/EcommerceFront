@@ -21,6 +21,7 @@
             <th>Stock</th>
             <th>MPN</th>
             <th>Bought quantity</th>
+            <th>Edit line</th>
             <%--<th>Add to cart</th>--%>
             <%--<th>Add to cart</th>--%>
         </tr>
@@ -28,12 +29,14 @@
         <tbody>
         <c:forEach items="${allLines}" var="line">
             <tr>
+                <td>${line.orderLineId}</td>
                 <td>${line.product.productId}</td>
                 <td>${line.product.productBrand}</td>
                 <td>${line.product.productModel}</td>
                 <td>${line.product.productStock}</td>
                 <td>${line.product.productMPN}</td>
                 <td>${line.boughtQuantity}</td>
+                <td><a href="/cart/edit/${line.orderLineId}">Edit</a></td>
                     <%--<td><a href="make_purchase?productId=<c:out value="${product1.productId}"/>">To cart</a></td>--%>
                 <%--<td><a href="/main/add/${product1.productId}">Add to cart</a></td>--%>
             </tr>
