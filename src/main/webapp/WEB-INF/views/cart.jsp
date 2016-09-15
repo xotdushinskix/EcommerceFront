@@ -15,7 +15,8 @@
     <table border="2">
         <thead>
         <tr>
-            <th>Product Id</th>
+            <th>Order line Id</th>
+            <th>Product id</th>
             <th>Brand</th>
             <th>Model</th>
             <th>Stock</th>
@@ -43,8 +44,10 @@
         </c:forEach>
         </tbody>
     </table>
+    <h3 style="color: #ac2925">${moreThanStock}</h3>
+    <h3 style="color: #ac2925">${nullValue}</h3>
 
-    ${testS}
+
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.spring.nikita.controller;
 
+import com.spring.nikita.help_model.HelpCartEditor;
 import com.spring.nikita.model.OrderLines;
 import com.spring.nikita.model.Product;
 import com.spring.nikita.model.User;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.sql.SQLException;
 
@@ -19,7 +21,7 @@ import java.sql.SQLException;
  * Created by nikita on 08.09.16.
  */
 @Controller
-public class CartController extends GetUserName{
+public class CartController extends GetUserName {
 
     @Autowired
     private OrderLinesService orderLinesService;
@@ -39,76 +41,93 @@ public class CartController extends GetUserName{
 
         model.addAttribute("allLines", orderLinesService.getNotApprovedLineByUserId(user.getId()));
         model.addAttribute("testS", orderLines.getProduct());
-        System.out.println(orderLines.getProduct());
         return "cart";
     }
 
 
-
-    @RequestMapping(value = "/cart/edit/{orderLineId}", method = RequestMethod.GET)
-    public String editCartGet(@PathVariable("orderLineId")int orderLineId, Model model) throws SQLException {
-        model.addAttribute("orderLine", orderLinesService.getOrderLine(orderLineId));
+    @RequestMapping(value = "/cart/edit/{order_Line_Id}", method = RequestMethod.GET)
+    public String editCartGet(@PathVariable("order_Line_Id") int order_LineId, Model model,
+                              @ModelAttribute OrderLines orderLines) throws SQLException {
+        model.addAttribute("orderLine", orderLinesService.getOrderLine(order_LineId));
         return "editCart";
     }
 
 
-
-    @RequestMapping(value = "/cart/edit/{orderLineId}", method = RequestMethod.POST)
-    public String editCartPost(@RequestParam("newPurchQuantity") int newPurchQuantity, @ModelAttribute OrderLines orderLines, Model model) throws SQLException {
-        System.out.println("lufaaaa");
-        System.out.println(newPurchQuantity);
-        System.out.println("lufaaaa");
-
-
-//        orderLines = orderLinesService.getOrderLine(orderLineId);
-        int orderLineId = orderLines.getOrderLineId();
-        System.out.println(orderLineId);
-        System.out.println(orderLinesService.getOrderLine(orderLineId).getProduct().getProductBrand());
-//        //product = orderLines.getProduct();
-//        int prodStock = product.getProductStock();
-//        int startBoughtQuantity = orderLines.getBoughtQuantity();
-//        System.out.println(startBoughtQuantity);
-        //int productStock = orderLines.getProduct().getProductStock();
-
+//    @RequestMapping(value = "/cart/edit/{order_Line_Id}", method = RequestMethod.POST)
+//    public String editCartPost(@ModelAttribute OrderLines orderLines,
+//                               Model model, @ModelAttribute Product product, RedirectAttributes attributes) throws SQLException {
+//
+//        System.out.println(orderLines.getBoughtQuantity());
+//
 //        return "redirect:/cart";
+//    }
+
+
+    @RequestMapping(value = "/cart/edit/{order_Line_Id}", method = RequestMethod.POST)
+    public String editCartPost(@RequestParam("newPurchQuantity") int newPurchQuantity, @ModelAttribute OrderLines orderLines,
+                               Model model, @ModelAttribute Product product, RedirectAttributes attributes) throws SQLException {
+
+        int order_LineId = orderLines.getOrderLineId();
+        int productStock = orderLinesService.getOrderLine(order_LineId).getProduct().getProductStock();
+        int startBoughtQuantity = orderLinesService.getOrderLine(order_LineId).getBoughtQuantity();
+        product = orderLinesService.getOrderLine(order_LineId).getProduct();
+        orderLines = orderLinesService.getOrderLine(order_LineId);
+
+
+        System.out.println(orderLines.getBoughtQuantity() + "get bougth quantity start");
 
         String returnString = null;
 
-        orderLines = orderLinesService.getOrderLine(orderLineId);
-        System.out.println();
-        System.out.println(orderLines.getProduct().getProductModel());
-        System.out.println();
-        return "redirect:/cart";
 
-//        if (newPurchQuantity > orderLines.getBoughtQuantity()) {
-//            String moreThanStock = "Purchase quantity can not be more than in stock";
-//            model.addAttribute("moreThanStock", moreThanStock);
+//        if (String.valueOf(newPurchQuantity).length() != 0) {
+//            System.out.println("neeeeeeee nolllllllll");
+
+        try {
+
+
+            if (newPurchQuantity > productStock) {
+                String moreThanStock = "Purchase quantity can not be more than in stock";
+                attributes.addFlashAttribute("moreThanStock", moreThanStock);
+                returnString = "redirect:/cart";
+
+
+            } else if (startBoughtQuantity < newPurchQuantity) {
+
+                int newStock = productStock - (newPurchQuantity - startBoughtQuantity);
+                product.setProductStock(newStock);
+                productService.editProduct(product);
+
+                orderLines.setBoughtQuantity(newPurchQuantity);
+                orderLinesService.editOrderLine(orderLines);
+                returnString = "redirect:/cart";
+
+
+            } else if (startBoughtQuantity > newPurchQuantity) {
+
+                int newStock = productStock + (startBoughtQuantity - newPurchQuantity);
+                product.setProductStock(newStock);
+                productService.editProduct(product);
+
+                orderLines.setBoughtQuantity(newPurchQuantity);
+                orderLinesService.editOrderLine(orderLines);
+                returnString = "redirect:/cart";
+            }
+
+        } catch (Exception e) {
+            System.out.println("nulllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll");
+            String nullValue = "Purchase quantity can not equals null";
+            attributes.addFlashAttribute("nullValue", nullValue);
+            returnString = "redirect:/cart";
+        }
+
+//        } else {
+//            System.out.println("nulllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll");
+//            String nullValue = "Purchase quantity can not equals null";
+//            attributes.addFlashAttribute("nullValue", nullValue);
 //            returnString = "redirect:/cart";
 //        }
-//
-//        if (orderLines.getBoughtQuantity() < newPurchQuantity) {
-//            System.out.println();
-//            System.out.println("<<<<<<<<<<");
-//            System.out.println();
-//            int newStock = productService.getProduct() - (newPurchQuantity - startBoughtQuantity);
-//            product.setProductStock(newStock);
-//            productService.editProduct(product);
-//            orderLine.setBoughtQuantity(newPurchQuantity);
-//            orderLinesService.editOrderLine(orderLine);
-//            returnString = "redirect:/cart";
-//        } else if (startBoughtQuantity > newPurchQuantity) {
-//            System.out.println();
-//            System.out.println(">>>>>>>>>>");
-//            System.out.println();
-//            int newStock = prodStock + (startBoughtQuantity - newPurchQuantity);
-//            product.setProductStock(newStock);
-//            productService.editProduct(product);
-//            orderLine.setBoughtQuantity(newPurchQuantity);
-//            orderLinesService.editOrderLine(orderLine);
-//            returnString = "redirect:/cart";
-//        }
-//
-//        return returnString;
+
+        return returnString;
     }
 
 }

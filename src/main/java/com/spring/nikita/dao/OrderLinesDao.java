@@ -19,5 +19,6 @@ public interface OrderLinesDao {
     OrderLines getOrderLineBySerNameAndProduct (User user, Product product) throws SQLException;
     List<OrderLines> getAllUserLineByRequiredUserId (int id) throws SQLException;
     List<OrderLines> getNotApprovedLineByUserId(int id) throws SQLException;
+    void sqlEditOrderLine(OrderLines orderLine) throws SQLException;
 
 }

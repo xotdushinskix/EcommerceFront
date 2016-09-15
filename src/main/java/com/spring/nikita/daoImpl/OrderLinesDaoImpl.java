@@ -153,4 +153,20 @@ public class OrderLinesDaoImpl implements OrderLinesDao {
         }
         return orderLines;
     }
+
+    @Override
+    public void sqlEditOrderLine(OrderLines orderLine) throws SQLException {
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            session.createQuery("");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if ((session.isOpen()) && (session != null)) {
+                session.close();
+            }
+        }
+    }
 }
