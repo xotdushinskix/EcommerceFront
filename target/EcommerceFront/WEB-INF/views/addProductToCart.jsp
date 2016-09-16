@@ -12,26 +12,35 @@
     <title>Add product to cart</title>
 </head>
 <body>
-    <form:form action="${pageContext.request.contextPath}/main/add/${product.productId}" modelAttribute="productForSale" method="post">
+    <form:form action="${pageContext.request.contextPath}/main/add/${productId}" modelAttribute="orderLines"  method="post">
         <table>
             <tr>
-                <td>Brand:</td>
-                <td>${productForSale.productBrand}</td>
+                <td>Product ID</td>
+                <td>${product.productId}</td>
             </tr>
             <tr>
-                <td>Model:</td>
-                <td>${productForSale.productModel}</td>
+                <td>Brand</td>
+                <td>${product.productBrand}</td>
             </tr>
             <tr>
-                <td>MPN:</td>
-                <td>${productForSale.productMPN}</td>
+                <td>Model</td>
+                <td>${product.productModel}</td>
             </tr>
             <tr>
-                <td>Stock:</td>
-                <td>${productForSale.productStock}</td>
+                <td>Reserved Stock</td>
+                <td>${product.reservedStock}</td>
             </tr>
+            <tr>
+                <td>Stock</td>
+                <td>${product.productStock}</td>
+            </tr>
+            <tr>
+                <td>Added quantity</td>
+                <td><form:input path="boughtQuantity"/></td>
+                <td><form:errors path="boughtQuantity"/></td>
+            </tr>
+
         </table>
-        <input type="number" name="purchQuantity" />
         <input type="submit" value="Add to cart">
     </form:form>
 </body>

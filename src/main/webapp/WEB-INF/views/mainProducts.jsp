@@ -26,6 +26,7 @@
             <th>Brand</th>
             <th>Model</th>
             <th>Stock</th>
+            <th>Reserved Stock</th>
             <th>MPN</th>
             <%--<th>Add to cart</th>--%>
             <th>Add to cart</th>
@@ -38,6 +39,7 @@
                 <td>${product1.productBrand}</td>
                 <td>${product1.productModel}</td>
                 <td>${product1.productStock}</td>
+                <td>${product1.reservedStock}</td>
                 <td>${product1.productMPN}</td>
                 <%--<td><a href="make_purchase?productId=<c:out value="${product1.productId}"/>">To cart</a></td>--%>
                 <td><a href="/main/add/${product1.productId}">Add to cart</a></td>
@@ -45,6 +47,7 @@
         </c:forEach>
         </tbody>
     </table>
+    <h3 style="color: #ac2925">${moreThanInStock}</h3>
 
     <%--<br>--%>
 

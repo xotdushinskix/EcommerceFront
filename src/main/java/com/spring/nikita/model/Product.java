@@ -2,7 +2,11 @@ package com.spring.nikita.model;
 
 //import org.hibernate.validator.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,20 +22,24 @@ public class Product {
     @Column(name = "product_id")
     private int productId;
 
-    //@NotEmpty(message = "Please, enter product brand")
+    //@NotBlank(message = "Please, enter product brand")
     @Column(name = "product_brand")
     private String productBrand;
 
-    //@NotEmpty(message = "Please, enter product model")
+    //@NotBlank(message = "Please, enter product model")
     @Column(name = "product_model")
     private String productModel;
 
     @Column(name = "stock")
     private int productStock;
 
-    //@NotEmpty(message = "Please, enter mpn")
+    //@NotNull(message = "Please, enter mpn")
     @Column(name = "product_mpn", unique = true)
     private int productMPN;
+
+    //@NotNull
+    @Column(name = "reserved_stock")
+    private int reservedStock;
 
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private List<OrderLines> orderLines = new ArrayList<OrderLines>();
@@ -86,5 +94,13 @@ public class Product {
 
     public void setOrderLines(List<OrderLines> orderLines) {
         this.orderLines = orderLines;
+    }
+
+    public int getReservedStock() {
+        return reservedStock;
+    }
+
+    public void setReservedStock(int reservedStock) {
+        this.reservedStock = reservedStock;
     }
 }

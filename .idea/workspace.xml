@@ -2,25 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0dbc7202-9c8e-45ca-9637-5d8b6ba7a735" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/spring/nikita/help_model/HelpCartEditor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/ProductController.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/MainPageController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront.war" afterPath="$PROJECT_DIR$/target/EcommerceFront.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/configuration/SpringMvcInitializer.class" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/configuration/SpringMvcInitializer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/controller/AddToCartController.class" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/controller/AddToCartController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/controller/CartController.class" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/controller/CartController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/dao/OrderLinesDao.class" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/dao/OrderLinesDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/daoImpl/OrderLinesDaoImpl.class" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/daoImpl/OrderLinesDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/spring/nikita/configuration/SpringMvcInitializer.class" afterPath="$PROJECT_DIR$/target/classes/com/spring/nikita/configuration/SpringMvcInitializer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/controller/ProductController.class" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/controller/ProductController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/model/OrderLines.class" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/model/OrderLines.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/model/Product.class" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/model/Product.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/model/User.class" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/classes/com/spring/nikita/model/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/spring/nikita/controller/AddToCartController.class" afterPath="$PROJECT_DIR$/target/classes/com/spring/nikita/controller/AddToCartController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/spring/nikita/controller/CartController.class" afterPath="$PROJECT_DIR$/target/classes/com/spring/nikita/controller/CartController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/spring/nikita/dao/OrderLinesDao.class" afterPath="$PROJECT_DIR$/target/classes/com/spring/nikita/dao/OrderLinesDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/spring/nikita/daoImpl/OrderLinesDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/spring/nikita/daoImpl/OrderLinesDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/spring/nikita/controller/ProductController.class" afterPath="$PROJECT_DIR$/target/classes/com/spring/nikita/controller/ProductController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/spring/nikita/model/OrderLines.class" afterPath="$PROJECT_DIR$/target/classes/com/spring/nikita/model/OrderLines.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/spring/nikita/model/Product.class" afterPath="$PROJECT_DIR$/target/classes/com/spring/nikita/model/Product.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/spring/nikita/model/User.class" afterPath="$PROJECT_DIR$/target/classes/com/spring/nikita/model/User.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/SpringMvcInitializer.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/SpringMvcInitializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/AddToCartController.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/AddToCartController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/CartController.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/CartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/nikita/dao/OrderLinesDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/nikita/dao/OrderLinesDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/nikita/daoImpl/OrderLinesDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/nikita/daoImpl/OrderLinesDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/OrderLines.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/OrderLines.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/Product.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/Product.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProductToCart.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProductToCart.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editCart.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editCart.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/views/cart.jsp" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/views/cart.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProducts.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProducts.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/views/addProductToCart.jsp" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/views/addProductToCart.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/views/editCart.jsp" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/views/editCart.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/views/mainProducts.jsp" afterPath="$PROJECT_DIR$/target/EcommerceFront/WEB-INF/views/mainProducts.jsp" />
     </list>
     <ignored path="SpringSecurityHibernateAnnotationExample.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,25 +50,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cart.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp">
+      <file leaf-file-name="OrderLines.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/model/OrderLines.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="47" column="42" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="42" />
-              <folding />
+            <state relative-caret-position="396">
+              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#835#836#0" expanded="true" />
+                <element signature="e#869#870#0" expanded="true" />
+                <element signature="e#920#921#0" expanded="true" />
+                <element signature="e#966#967#0" expanded="true" />
+                <element signature="e#995#996#0" expanded="true" />
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1060#1061#0" expanded="true" />
+                <element signature="e#1092#1093#0" expanded="true" />
+                <element signature="e#1127#1128#0" expanded="true" />
+                <element signature="e#1157#1158#0" expanded="true" />
+                <element signature="e#1204#1205#0" expanded="true" />
+                <element signature="e#1242#1243#0" expanded="true" />
+                <element signature="e#1280#1281#0" expanded="true" />
+                <element signature="e#1317#1318#0" expanded="true" />
+                <element signature="e#1374#1375#0" expanded="true" />
+                <element signature="e#1426#1427#0" expanded="true" />
+                <element signature="e#1467#1468#0" expanded="true" />
+                <element signature="e#1500#1501#0" expanded="true" />
+                <element signature="e#1556#1557#0" expanded="true" />
+                <element signature="e#1600#1601#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="131" column="17" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
-              <folding>
-                <element signature="e#3208#3209#0" expanded="true" />
-                <element signature="e#3229#3230#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1566">
+              <caret line="137" column="26" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,11 +95,19 @@
       <file leaf-file-name="CartController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/CartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-118">
+              <caret line="67" column="106" selection-start-line="67" selection-start-column="77" selection-end-line="67" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetUserName.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/GetUserName.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,38 +115,60 @@
       <file leaf-file-name="editCart.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editCart.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="100" selection-start-line="15" selection-start-column="100" selection-end-line="15" selection-end-column="100" />
+            <state relative-caret-position="680">
+              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/WebConfig.java">
+      <file leaf-file-name="cart.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="413">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderLines.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/model/OrderLines.java">
+      <file leaf-file-name="AddToCartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/AddToCartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="820">
+              <caret line="61" column="59" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userEditInfo.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userEditInfo.jsp">
+      <file leaf-file-name="MainPageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/MainPageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="95" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="95" />
+            <state relative-caret-position="656">
+              <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/SecurityConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainProducts.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProducts.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -141,7 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/accessDenied.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/myPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/GetUserName.java" />
@@ -150,7 +205,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/info.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/testEditUser.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/ProductController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/validation.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/ChagePassController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editUserPassword.jsp" />
@@ -159,18 +213,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/ChangePassword.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userEditInfo.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/infoPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProductToCart.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProducts.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/service/OrderLinesService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/OrderLinesServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/web.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/daoImpl/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/HibernateConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/CustomUserDetailsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/SecurityConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/UserRoles.java" />
         <option value="$PROJECT_DIR$/src/main/resources/validates.xml" />
@@ -179,19 +229,25 @@
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/validator/ValidatorBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/WebConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/validator/UserValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/AddToCartController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/OrderLines.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/dao/OrderLinesDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/daoImpl/OrderLinesDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/help_model/EditOrderLines.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/400.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/ExceptionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/SpringMvcInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/help_model/HelpCartEditor.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editCart.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/OrderLines.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/model/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProductToCart.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/CartController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProducts.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/AddToCartController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/MainPageController.java" />
       </list>
     </option>
   </component>
@@ -249,6 +305,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -665,9 +724,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1236,12 +1292,13 @@
       <workItem from="1473058208335" duration="119317000" />
       <workItem from="1473683518551" duration="10303000" />
       <workItem from="1473751432634" duration="28223000" />
-      <workItem from="1473840292989" duration="21256000" />
+      <workItem from="1473840292989" duration="48591000" />
+      <workItem from="1474024639285" duration="3345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257909000" />
+    <option name="totallyTimeSpent" value="288589000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1253,7 +1310,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1920" height="1055" extended-state="1" />
+    <frame x="0" y="25" width="1920" height="1055" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1265,11 +1322,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3440171" sideWeight="0.4974293" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.383547" sideWeight="0.4974293" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20064034" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31730768" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053304" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1652452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1283,7 +1340,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1338,7 +1395,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProducts.jsp</url>
-          <line>77</line>
+          <line>80</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -1376,72 +1433,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/SecurityWebApplicationInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/GetUserName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/OrderFinalServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/OrderLinesServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/ProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/RoleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/model/Role.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-64">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#582#593#0" expanded="false" />
-            <element signature="e#656#657#0" expanded="false" />
-            <element signature="e#686#687#0" expanded="false" />
-            <element signature="e#729#730#0" expanded="false" />
-            <element signature="e#767#768#0" expanded="false" />
-            <element signature="e#802#803#0" expanded="false" />
-            <element signature="e#833#834#0" expanded="false" />
-            <element signature="e#881#882#0" expanded="false" />
-            <element signature="e#921#922#0" expanded="false" />
-            <element signature="e#966#967#0" expanded="false" />
-            <element signature="e#998#999#0" expanded="false" />
-            <element signature="e#1057#1058#0" expanded="false" />
-            <element signature="e#1099#1100#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1449,7 +1444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1482,19 +1476,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/model/OrderFinal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1527,28 +1512,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/daoImpl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/CustomUserDetailsService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding>
-            <element signature="e#1574#1592#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1579,13 +1546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/HibernateConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-147">
@@ -1594,31 +1554,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProducts.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/model/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/validator/ValidatorBean.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProductToCart.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editUserPassword.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -1627,70 +1563,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/AddToCartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/service/OrderLinesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/dao/OrderLinesDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/daoImpl/OrderLinesDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="162" column="36" selection-start-line="162" selection-start-column="36" selection-end-line="162" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1066#1077#0" expanded="true" />
-            <element signature="e#1198#1210#0" expanded="true" />
-            <marker date="1473761849465" expanded="true" signature="1082:1213" placeholder="//..." />
-            <marker date="1473761849465" expanded="true" signature="2115:2477" placeholder="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/help_model/EditOrderLines.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/help_model/EditOrderLines.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/accessDenied.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1707,14 +1587,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/ExceptionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/ExceptionController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/SpringMvcInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1722,14 +1595,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-315">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1741,30 +1606,122 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/reflect/Field.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="230" column="0" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/daoImpl/ProductDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/daoImpl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/infoPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userEditInfo.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="95" selection-start-line="14" selection-start-column="95" selection-end-line="14" selection-end-column="95" />
+        <state relative-caret-position="240">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="47" column="42" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="42" />
+        <state relative-caret-position="-162">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/model/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="131" column="17" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
           <folding>
-            <element signature="e#3208#3209#0" expanded="true" />
-            <element signature="e#3229#3230#0" expanded="true" />
+            <element signature="e#2282#2283#0" expanded="true" />
+            <element signature="e#2318#2319#0" expanded="true" />
+            <element signature="e#2373#2374#0" expanded="true" />
+            <element signature="e#2423#2424#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1064#1075#0" expanded="true" />
+            <element signature="e#1196#1208#0" expanded="true" />
+            <marker date="1473935383640" expanded="true" signature="1080:1211" placeholder="//..." />
+            <marker date="1473935383640" expanded="true" signature="2113:2475" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/serviceImpl/OrderLinesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/daoImpl/OrderLinesDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/service/OrderLinesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1772,32 +1729,117 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/model/OrderLines.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#835#836#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1060#1061#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#1127#1128#0" expanded="true" />
+            <element signature="e#1157#1158#0" expanded="true" />
+            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1242#1243#0" expanded="true" />
+            <element signature="e#1280#1281#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
+            <element signature="e#1374#1375#0" expanded="true" />
+            <element signature="e#1426#1427#0" expanded="true" />
+            <element signature="e#1467#1468#0" expanded="true" />
+            <element signature="e#1500#1501#0" expanded="true" />
+            <element signature="e#1556#1557#0" expanded="true" />
+            <element signature="e#1600#1601#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProductToCart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/editCart.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="100" selection-start-line="15" selection-start-column="100" selection-end-line="15" selection-end-column="100" />
+        <state relative-caret-position="680">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mainProducts.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="57" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/configuration/SecurityConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/AddToCartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="61" column="59" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/CartController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+        <state relative-caret-position="-118">
+          <caret line="67" column="106" selection-start-line="67" selection-start-column="77" selection-end-line="67" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/GetUserName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/MainPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/model/OrderLines.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spring/nikita/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        <state relative-caret-position="1566">
+          <caret line="137" column="26" selection-start-line="137" selection-start-column="26" selection-end-line="137" selection-end-column="26" />
           <folding />
         </state>
       </provider>

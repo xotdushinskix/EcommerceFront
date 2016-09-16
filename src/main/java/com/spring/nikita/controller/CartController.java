@@ -64,70 +64,50 @@ public class CartController extends GetUserName {
 
 
     @RequestMapping(value = "/cart/edit/{order_Line_Id}", method = RequestMethod.POST)
-    public String editCartPost(@RequestParam("newPurchQuantity") int newPurchQuantity, @ModelAttribute OrderLines orderLines,
+    public String editCartPost(@RequestParam("boughtQuantity") int boughtQuantity, @ModelAttribute OrderLines orderLines,
                                Model model, @ModelAttribute Product product, RedirectAttributes attributes) throws SQLException {
 
         int order_LineId = orderLines.getOrderLineId();
         int productStock = orderLinesService.getOrderLine(order_LineId).getProduct().getProductStock();
+        int productReservedStock = orderLinesService.getOrderLine(order_LineId).getProduct().getReservedStock();
+        int availableStock = productStock - productReservedStock;
         int startBoughtQuantity = orderLinesService.getOrderLine(order_LineId).getBoughtQuantity();
         product = orderLinesService.getOrderLine(order_LineId).getProduct();
         orderLines = orderLinesService.getOrderLine(order_LineId);
 
 
-        System.out.println(orderLines.getBoughtQuantity() + "get bougth quantity start");
-
-        String returnString = null;
-
-
-//        if (String.valueOf(newPurchQuantity).length() != 0) {
-//            System.out.println("neeeeeeee nolllllllll");
-
         try {
-
-
-            if (newPurchQuantity > productStock) {
-                String moreThanStock = "Purchase quantity can not be more than in stock";
+            if (boughtQuantity > availableStock) {
+                String moreThanStock = "Purchase quantity can not be more than in available stock";
                 attributes.addFlashAttribute("moreThanStock", moreThanStock);
-                returnString = "redirect:/cart";
 
 
-            } else if (startBoughtQuantity < newPurchQuantity) {
+            } else if (startBoughtQuantity < boughtQuantity) {
 
-                int newStock = productStock - (newPurchQuantity - startBoughtQuantity);
-                product.setProductStock(newStock);
+                int newReservedStock = productReservedStock + (boughtQuantity - startBoughtQuantity);
+                product.setReservedStock(newReservedStock);
                 productService.editProduct(product);
 
-                orderLines.setBoughtQuantity(newPurchQuantity);
+                orderLines.setBoughtQuantity(boughtQuantity);
                 orderLinesService.editOrderLine(orderLines);
-                returnString = "redirect:/cart";
 
 
-            } else if (startBoughtQuantity > newPurchQuantity) {
+            } else if (startBoughtQuantity > boughtQuantity) {
 
-                int newStock = productStock + (startBoughtQuantity - newPurchQuantity);
-                product.setProductStock(newStock);
+                int newReservedStock1 = productReservedStock - (startBoughtQuantity - boughtQuantity);
+                product.setReservedStock(newReservedStock1);
                 productService.editProduct(product);
 
-                orderLines.setBoughtQuantity(newPurchQuantity);
+                orderLines.setBoughtQuantity(boughtQuantity);
                 orderLinesService.editOrderLine(orderLines);
-                returnString = "redirect:/cart";
             }
 
         } catch (Exception e) {
             System.out.println("nulllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll");
             String nullValue = "Purchase quantity can not equals null";
             attributes.addFlashAttribute("nullValue", nullValue);
-            returnString = "redirect:/cart";
         }
-
-//        } else {
-//            System.out.println("nulllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll");
-//            String nullValue = "Purchase quantity can not equals null";
-//            attributes.addFlashAttribute("nullValue", nullValue);
-//            returnString = "redirect:/cart";
-//        }
-
-        return returnString;
+        return "redirect:/cart";
     }
 
 }

@@ -19,39 +19,34 @@
                 <td>Orderline ID</td>
                 <td><form:input path="orderLineId" readonly="true"/></td>
             </tr>
-            <%--<tr>--%>
-                <%--<td>Product ID</td>--%>
-                <%--&lt;%&ndash;<td>${orderLine.product.productId}</td>&ndash;%&gt;--%>
-                <%--<td><form:input path="orderLineId" readonly="true"/></td>--%>
-            <%--</tr>--%>
-            <%--<tr>--%>
-                <%--<td>Brand</td>--%>
-                <%--<td><form:input path="orderLine.product.productBrand" readonly="true"/> </td>--%>
-            <%--</tr>--%>
             <tr>
-                <td>Model</td>
-                <td>${orderLine.product.productModel}</td>
+                <td>Product ID</td>
+                <td><form:input path="product.productId" readonly="true"/></td>
             </tr>
             <tr>
-                <td>MPN</td>
-                <td>${orderLine.product.productMPN}</td>
+                <td>Brand</td>
+                <td><form:input path="product.productBrand" readonly="true"/></td>
+            </tr>
+            <tr>
+                <td>Model</td>
+                <td><form:input path="product.productModel" readonly="true"/></td>
             </tr>
             <tr>
                 <td>Stock</td>
-                <td>${orderLine.product.productStock}</td>
+                <td><form:input path="product.productStock" readonly="true"/></td>
+            </tr>
+            <tr>
+                <td>MPN</td>
+                <td><form:input path="product.productMPN" readonly="true"/></td>
+            </tr>
+            <tr>
+                <td>Reserved stock</td>
+                <td><form:input path="product.reservedStock" readonly="true"/></td>
             </tr>
             <tr>
                 <td>Bought quantity</td>
-                <td>${orderLine.boughtQuantity}</td>
-            </tr>
-            <%--<tr>--%>
-                <%--<td><form:input path="boughtQuantity"/></td>--%>
-                <%--<td><form:errors path="boughtQuantity"/></td>--%>
-            <%--</tr>--%>
-
-            <tr>
-                <td>New quantity</td>
-                <td><input type="text" name="newPurchQuantity" /></td>
+                <td><form:input path="boughtQuantity"/></td>
+                <td><form:errors path="boughtQuantity"/></td>
             </tr>
         </table>
         <input type="submit" value="Edit">

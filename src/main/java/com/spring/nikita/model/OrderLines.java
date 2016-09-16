@@ -1,6 +1,9 @@
 package com.spring.nikita.model;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by nikita on 31.08.16.
@@ -22,6 +25,7 @@ public class OrderLines {
     @JoinColumn(name = "product_id")
     private Product product;
 
+    @NotNull(message = "Bought quantity cannot be empty")
     @Column(name = "bought_quantity")
     private int boughtQuantity;
 

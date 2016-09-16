@@ -18,7 +18,7 @@ public class User {
     @Column(name = "user_id")
     private int id;
 
-    //@NotBlank(message = "Please, enter your first name")
+    @NotBlank(message = "Please, enter your first name")
     @Column(name = "first_name")
     private String firstName;
 
@@ -112,4 +112,6 @@ public class User {
     public void setOrderLines(List<OrderLines> orderLines) {
         this.orderLines = orderLines;
     }
+
+
 }
