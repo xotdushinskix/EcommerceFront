@@ -14,6 +14,8 @@
 </head>
 <body>
 
+<p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
+
     <table>
         <tr>
             <td>First name:</td>

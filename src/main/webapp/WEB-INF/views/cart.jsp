@@ -12,6 +12,10 @@
     <title>Cart</title>
 </head>
 <body>
+
+<p style="position: absolute; top: 0.1%; right: 8%;"><strong><a href="/info">My page ${userName}</a></strong></p>
+<p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
+
     <table border="2">
         <thead>
         <tr>

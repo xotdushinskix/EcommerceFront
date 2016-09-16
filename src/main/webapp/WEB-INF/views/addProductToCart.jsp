@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: nikita
@@ -12,6 +13,10 @@
     <title>Add product to cart</title>
 </head>
 <body>
+
+<p style="position: absolute; top: 0.1%; right: 8%;"><strong><a href="/info">My page ${userName}</a></strong></p>
+<p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
+
     <form:form action="${pageContext.request.contextPath}/main/add/${productId}" modelAttribute="orderLines"  method="post">
         <table>
             <tr>

@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: nikita
@@ -12,6 +13,9 @@
     <title>User Info</title>
 </head>
 <body>
+
+<p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
+
     <form:form action="${pageContext.request.contextPath}/info/edit/${user.id}" commandName="user" method="post">
         <table>
             <tr>

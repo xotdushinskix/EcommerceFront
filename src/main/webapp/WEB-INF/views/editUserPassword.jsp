@@ -13,6 +13,10 @@
     <title>Edit user password</title>
 </head>
 <body>
+
+<p style="position: absolute; top: 0.1%; right: 8%;"><strong><a href="/info">My page ${userName}</a></strong></p>
+<p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
+
     <form:form action="${pageContext.request.contextPath}/info/edit/password" commandName="user" method="post">
         Your current password: <input type="text" name="currentPassword" />
                                                 <%--<br />--%>

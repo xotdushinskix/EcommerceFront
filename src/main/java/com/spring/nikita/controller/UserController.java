@@ -4,8 +4,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 //import javax.validation.Valid;
 
+import com.spring.nikita.model.Role;
 import com.spring.nikita.model.User;
+import com.spring.nikita.model.UserRoles;
 import com.spring.nikita.service.RoleService;
+import com.spring.nikita.service.UserRolesService;
 import com.spring.nikita.service.UserService;
 import com.spring.nikita.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
+import java.util.List;
 
 @Controller
 public class UserController extends GetUserName {
@@ -34,11 +38,15 @@ public class UserController extends GetUserName {
 	@Autowired
 	private UserValidator userValidator;
 
+	@Autowired
+	private UserRolesService userRolesService;
+
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage() {
 		return "welcome";
 	}
+
 
 
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
@@ -52,23 +60,51 @@ public class UserController extends GetUserName {
 	}
 
 
+
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
 	public String addUser(@ModelAttribute User user) {
 		return "addUser";
 	}
 
+
+
+	@RequestMapping(value = "/registration", method = RequestMethod.POST)
+	public String addUserFinal(@ModelAttribute User user,  @ModelAttribute Role role, @RequestParam("password") String password1,
+							   @RequestParam("password") String password2) throws SQLException {
+
+		//role = roleService.getRoleByName(2);
+		//userRoles.setUser(user);
+		//userService.addUser(user);
+
+		//userRolesService.addUserRole(userRoles);
+
+
+		//role = roleService.getRoleByName(2);
+		//user.setUserRoles().add(role);
+
+		if (password1.equals(password2)) {
+			for(UserRoles userRoles : user.getUserRoles()){
+				userRolesService.addUserRole(userRoles);
+				userService.addUser(user);
+				user.setUserRoles((List<UserRoles>) roleService.getRoleByName(2));
+				userService.editUser(user);
+			}
 //
-//	@RequestMapping(value = "/registration", method = RequestMethod.POST)
-//	public String addUserFinal(@ModelAttribute User user, @RequestParam("password") String password1,
-//							   @RequestParam("password") String password2) throws SQLException {
-//		if (password1.equals(password2)) {
+//			userRoles = roleService.getRoleByName(2);
+//
+//			user.set
+//
+//			user.userRoles.getRole().getRoleType()
+//			user.getUserRoles().add(roleService.getRoleByName(2));
 //			user.getRoles().add(roleService.getRoleByName(2));
-//			userService.addUser(user);
-//		} else {
-//			System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
-//		}
-//		return "redirect:/";
-//	}
+
+
+		} else {
+			System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+		}
+		return "redirect:/";
+	}
+
 
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
@@ -81,6 +117,7 @@ public class UserController extends GetUserName {
 	}
 
 
+
 	@RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
 	public String accessDeniedPage(ModelMap model) throws SQLException {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -91,10 +128,12 @@ public class UserController extends GetUserName {
 	}
 
 
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
 		return "login";
 	}
+
 
 
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
@@ -105,6 +144,7 @@ public class UserController extends GetUserName {
 		}
 		return "redirect:/";
 	}
+
 
 
 	@RequestMapping(value = "/info", method = RequestMethod.GET)
@@ -119,6 +159,7 @@ public class UserController extends GetUserName {
 	}
 
 
+
 	@RequestMapping(value = "/info/edit/{id}", method = RequestMethod.GET)
 	public String showEditUserInfo(Model model, @PathVariable("id") int id, @ModelAttribute User user) throws SQLException {
 		String login = super.getPrincipal();
@@ -127,6 +168,7 @@ public class UserController extends GetUserName {
 		model.addAttribute("user", userService.getUserById(id));
 		return "userEditInfo";
 	}
+
 
 
 	@RequestMapping(value = "/info/edit/{id}", method = RequestMethod.POST)
@@ -150,6 +192,7 @@ public class UserController extends GetUserName {
 	}
 
 
+
 	@RequestMapping(value = "/info/edit/password", method = RequestMethod.POST)
 	public String postEditPass(@ModelAttribute User user, BindingResult result) {
 		if (result.hasErrors()) {
@@ -157,6 +200,7 @@ public class UserController extends GetUserName {
 		}
 		return "redirect:/info";
 	}
+
 
 
 //
