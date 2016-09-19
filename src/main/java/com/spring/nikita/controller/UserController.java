@@ -10,7 +10,6 @@ import com.spring.nikita.model.UserRoles;
 import com.spring.nikita.service.RoleService;
 import com.spring.nikita.service.UserRolesService;
 import com.spring.nikita.service.UserService;
-import com.spring.nikita.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -34,9 +33,6 @@ public class UserController extends GetUserName {
 
 	@Autowired
 	private RoleService roleService;
-
-	@Autowired
-	private UserValidator userValidator;
 
 	@Autowired
 	private UserRolesService userRolesService;
@@ -173,7 +169,7 @@ public class UserController extends GetUserName {
 
 	@RequestMapping(value = "/info/edit/{id}", method = RequestMethod.POST)
 	public String editUserInfo(@Validated @ModelAttribute User user, BindingResult result) throws SQLException {
-		userValidator.validate(user, result);
+//		userValidator.validate(user, result);
 		if (result.hasErrors()) {
 			return "userEditInfo";
 		}

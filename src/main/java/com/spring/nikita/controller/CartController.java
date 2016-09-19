@@ -1,6 +1,5 @@
 package com.spring.nikita.controller;
 
-import com.spring.nikita.help_model.HelpCartEditor;
 import com.spring.nikita.model.OrderLines;
 import com.spring.nikita.model.Product;
 import com.spring.nikita.model.User;
@@ -41,7 +40,7 @@ public class CartController extends GetUserName {
         User user = userService.getUserByLogin(login);
 
         model.addAttribute("allLines", orderLinesService.getNotApprovedLineByUserId(user.getId()));
-        model.addAttribute("testS", orderLines.getProduct());
+        model.addAttribute("orderHistory", orderLinesService.getAllUserLineByRequiredUser(user));
         return "cart";
     }
 
@@ -115,6 +114,25 @@ public class CartController extends GetUserName {
 
 
 
+    public void newOrder(User user, Product product, int boughtQuantity) throws SQLException {
+        OrderLines orderLines = new OrderLines();
+        orderLines.setUser(user);
+        orderLines.setProduct(product);
+        orderLines.setBoughtQuantity(boughtQuantity);
+        orderLinesService.editOrderLine(orderLines);
+
+        user.getOrderLines().add(orderLines);
+        product.getOrderLines().add(orderLines);
+
+        userService.editUser(user);
+        int reservedQuantity = product.getReservedStock();
+
+        product.setReservedStock(boughtQuantity + reservedQuantity);
+        productService.editProduct(product);
+    }
+
+
+
     @RequestMapping(value = "/main/add/{productId}", method = RequestMethod.POST)
     public String postCartPage(@PathVariable("productId") int productId,
                                @ModelAttribute Product product, @ModelAttribute User user,
@@ -140,45 +158,62 @@ public class CartController extends GetUserName {
                 int availableBoughtQuantity = orderLines.getBoughtQuantity();
                 int availableStock = productStock - availableBoughtQuantity;
 
-                if (boughtQuantity > availableStock) {
-                    String moreThanInStock = "You can not add more products than available in free stock";
-                    attributes.addFlashAttribute("moreThanInStock", moreThanInStock);
-                    returnString = "redirect:/main";
+                if (orderLines.getOrderFinal().getOrderId() == 0) {
+
+                    if (boughtQuantity > availableStock) {
+                        String moreThanInStock = "You can not add more products than available in free stock";
+                        attributes.addFlashAttribute("moreThanInStock", moreThanInStock);
+                        returnString = "redirect:/main";
+
+                    } else {
+
+                        int newBoughtQuantity = availableBoughtQuantity + boughtQuantity;
+
+                        orderLines.setBoughtQuantity(newBoughtQuantity);
+                        orderLinesService.editOrderLine(orderLines);
+
+                        int reservedQuantity = product.getReservedStock();
+                        product.setReservedStock(boughtQuantity + reservedQuantity);
+                        productService.editProduct(product);
+                        returnString = "redirect:/main";
+                    }
 
                 } else {
-
-                    int newBoughtQuantity = availableBoughtQuantity + boughtQuantity;
-
-                    orderLines.setBoughtQuantity(newBoughtQuantity);
-                    orderLinesService.editOrderLine(orderLines);
-
-                    int reservedQuantity = product.getReservedStock();
-                    product.setReservedStock(boughtQuantity + reservedQuantity);
-                    productService.editProduct(product);
+                    newOrder(user, product, boughtQuantity);
                     returnString = "redirect:/main";
                 }
 
             } catch (Exception e) {
-
-                orderLines = new OrderLines();
-                orderLines.setUser(user);
-                orderLines.setProduct(product);
-                orderLines.setBoughtQuantity(boughtQuantity);
-                orderLinesService.editOrderLine(orderLines);
-
-                user.getOrderLines().add(orderLines);
-                product.getOrderLines().add(orderLines);
-
-                userService.editUser(user);
-                int reservedQuantity = product.getReservedStock();
-
-                product.setReservedStock(boughtQuantity + reservedQuantity);
-                productService.editProduct(product);
+                newOrder(user, product, boughtQuantity);
                 returnString = "redirect:/main";
             }
         }
 
         return returnString;
+    }
+
+
+
+    @RequestMapping(value = "/cart/delete/{orderLineId}", method = RequestMethod.GET)
+    public String deleteOrderLine(Model model, @PathVariable("orderLineId") int orderLineId) throws SQLException {
+        model.addAttribute("orderLine", orderLinesService.getOrderLine(orderLineId));
+        return "deleteOrderLine";
+    }
+
+
+
+    @RequestMapping(value = "/cart/delete/{orderLineId}", method = RequestMethod.POST)
+    public String deleteOrderLinePost(@ModelAttribute OrderLines orderLines,
+                                      @PathVariable("orderLineId") int orderLineId, @ModelAttribute Product product) throws SQLException {
+        orderLines = orderLinesService.getOrderLine(orderLineId);
+        product = orderLines.getProduct();
+        int reservedStock = product.getReservedStock();
+        int lineQuantity = orderLines.getBoughtQuantity();
+        int newReservedStock = reservedStock - lineQuantity;
+        product.setReservedStock(newReservedStock);
+        productService.editProduct(product);
+        orderLinesService.deleteOrderLine(orderLines);
+        return "redirect:/cart";
     }
 
 }

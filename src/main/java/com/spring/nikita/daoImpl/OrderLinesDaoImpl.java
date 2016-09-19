@@ -116,13 +116,13 @@ public class OrderLinesDaoImpl implements OrderLinesDao {
 
 
 
-    public List<OrderLines> getAllUserLineByRequiredUserId(int id) throws SQLException {
+    public List<OrderLines> getAllUserLineByRequiredUser(User user) throws SQLException {
         List<OrderLines>orderLines = null;
         Session session = null;
         try {
             session = sessionFactory.openSession();
             Criteria criteria = session.createCriteria(OrderLines.class)
-                    .add(Restrictions.like("id", id))
+                    .add(Restrictions.like("user", user))
                     .add(Restrictions.isNotNull("orderFinal.orderId"));
             orderLines = criteria.list();
         } catch (Exception e) {
@@ -134,6 +134,8 @@ public class OrderLinesDaoImpl implements OrderLinesDao {
         }
         return orderLines;
     }
+
+
 
     public List<OrderLines> getNotApprovedLineByUserId(int id) throws SQLException {
         List<OrderLines> orderLines = null;
@@ -153,6 +155,8 @@ public class OrderLinesDaoImpl implements OrderLinesDao {
         }
         return orderLines;
     }
+
+
 
     @Override
     public void sqlEditOrderLine(OrderLines orderLine) throws SQLException {

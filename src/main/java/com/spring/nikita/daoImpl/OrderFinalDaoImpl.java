@@ -2,6 +2,7 @@ package com.spring.nikita.daoImpl;
 
 import com.spring.nikita.dao.OrderFinalDao;
 import com.spring.nikita.model.OrderFinal;
+import com.spring.nikita.model.OrderLines;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,12 +38,12 @@ public class OrderFinalDaoImpl implements OrderFinalDao {
 
 
 
-    public void addOrder(OrderFinal order) throws SQLException {
+    public void addOrder(OrderFinal orderFinal) throws SQLException {
         Session session = null;
         try {
             session = sessionFactory.openSession();
             session.beginTransaction();
-            session.save(order);
+            session.save(orderFinal);
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();

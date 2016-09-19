@@ -40,8 +40,8 @@ public class OrderLinesServiceImpl implements OrderLinesService {
         return orderLinesDao.getOrderLineBySerNameAndProduct(user, product);
     }
 
-    public List<OrderLines> getAllUserLineByRequiredUserId(int id) throws SQLException {
-        return orderLinesDao.getAllUserLineByRequiredUserId(id);
+    public List<OrderLines> getAllUserLineByRequiredUser(User user) throws SQLException {
+        return orderLinesDao.getAllUserLineByRequiredUser(user);
     }
 
     public List<OrderLines> getNotApprovedLineByUserId(int id) throws SQLException {

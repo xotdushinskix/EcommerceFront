@@ -2,6 +2,7 @@ package com.spring.nikita.serviceImpl;
 
 import com.spring.nikita.dao.OrderFinalDao;
 import com.spring.nikita.model.OrderFinal;
+import com.spring.nikita.model.OrderLines;
 import com.spring.nikita.service.OrderFinalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class OrderFinalServiceImpl implements OrderFinalService {
         return orderFinalDao.getOrderById(orderId);
     }
 
-    public void addOrder(OrderFinal order) throws SQLException {
-        orderFinalDao.addOrder(order);
+    public void addOrder(OrderFinal orderFinal) throws SQLException {
+        orderFinalDao.addOrder(orderFinal);
     }
 }

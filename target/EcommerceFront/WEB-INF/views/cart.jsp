@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: nikita
@@ -27,8 +28,7 @@
             <th>MPN</th>
             <th>Bought quantity</th>
             <th>Edit line</th>
-            <%--<th>Add to cart</th>--%>
-            <%--<th>Add to cart</th>--%>
+            <th>Delete line/th>
         </tr>
         </thead>
         <tbody>
@@ -42,14 +42,41 @@
                 <td>${line.product.productMPN}</td>
                 <td>${line.boughtQuantity}</td>
                 <td><a href="/cart/edit/${line.orderLineId}">Edit</a></td>
-                    <%--<td><a href="make_purchase?productId=<c:out value="${product1.productId}"/>">To cart</a></td>--%>
-                <%--<td><a href="/main/add/${product1.productId}">Add to cart</a></td>--%>
+                <td><a href="/cart/delete/${line.orderLineId}">Delete</a></td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
     <h3 style="color: #ac2925">${moreThanStock}</h3>
     <h3 style="color: #ac2925">${nullValue}</h3>
+
+
+
+    <form:form action="${pageContext.request.contextPath}/cart/finalize_order" commandName="orderLines" method="post">
+        <input type="submit" value="Finalize order">
+    </form:form>
+
+
+<h3>Order History</h3>
+<table border="2">
+    <thead>
+    <tr>
+        <th>Order Final ID</th>
+        <th>Created Data</th>
+        <th>Show Lines</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${orderHistory}" var="ordHisLine">
+        <tr>
+            <td>${ordHisLine.orderFinal.orderId}</td>
+            <td>${ordHisLine.orderFinal.createdData}</td>
+            <td><a href="/cart/final/lines/${ordHisLine.orderFinal.orderId}">Show</a></td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+
 
 
 
