@@ -18,20 +18,30 @@
 <p><c:if test="${pageContext.request.userPrincipal.name != null}" > <p><jsp:include page="logout.jsp" /> </c:if></p>
 
     <form:form action="${pageContext.request.contextPath}/info/edit/password" commandName="user" method="post">
-        Your current password: <input type="text" name="currentPassword" />
-                                                <%--<br />--%>
-                                                <%--<c:if test="${noCurrentPassword}">--%>
-                                                    <%--<small><p color="red">--%>
-                                                        <%--Note: you must enter a password--%>
-                                                    <%--</p></small>--%>
-                                                <%--</c:if>--%>
-        New password: <input type="text" name="newPSWRD" />
-                                        ${emptyNewPass}<br>
-        Confirm new password: <input type="text" name="cnfrmPSWRD" />
-                                    ${emptyConfirmPass}  ${message2} <br>
+        <table>
+            <tr>
+                <td>Your current password:</td>
+                <td><form:password path="password"/></td>
+                <td><form:errors path="password"/></td>
+                <td>${passwordMessage}</td>
+            </tr>
+
+            <tr>
+                <td>New password:</td>
+                <td><input type="password" name="newPassword"/></td>
+                <td>${newPassMessage}</td>
+            </tr>
+
+            <tr>
+                <td>Confirm new password:</td>
+                <td><input type="password" name="confirmNewPassword"/></td>
+                <td>${confirmPassMessage}</td>
+                <td>${notEqualsPasswords}</td>
+            </tr>
+
+        </table>
         <input type="submit" value="Edit pass">
     </form:form>
-    ${allEmpty}
 </body>
 </html>
 

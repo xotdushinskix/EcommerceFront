@@ -33,12 +33,6 @@
                 <td><form:input path="login"/></td>
                 <td><form:errors path="login"/></td>
             </tr>
-            <tr>
-                <td>Password:</td>
-                <%--<td><form:password path="password"/></td>--%>
-                <td><form:input path="password"/></td>
-                <td><form:errors path="password"/></td>
-            </tr>
         </table>
         <input type="submit" value="Edit">
     </form:form>

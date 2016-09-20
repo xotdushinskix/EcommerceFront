@@ -1,8 +1,5 @@
 package com.spring.nikita.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-//import javax.validation.Valid;
 
 import com.spring.nikita.model.Role;
 import com.spring.nikita.model.User;
@@ -11,10 +8,8 @@ import com.spring.nikita.service.RoleService;
 import com.spring.nikita.service.UserRolesService;
 import com.spring.nikita.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -23,7 +18,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
-import java.util.List;
+
 
 @Controller
 public class UserController extends GetUserName {
@@ -65,40 +60,32 @@ public class UserController extends GetUserName {
 
 
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
-	public String addUserFinal(@ModelAttribute User user,  @ModelAttribute Role role, @RequestParam("password") String password1,
-							   @RequestParam("password") String password2) throws SQLException {
+	public String addUserFinal(@Validated @ModelAttribute User user, BindingResult result, @ModelAttribute Role role,
+							   @RequestParam("password") String password1,
+							   @RequestParam("passwordC") String passwordC, Model model) throws SQLException {
 
-		//role = roleService.getRoleByName(2);
-		//userRoles.setUser(user);
-		//userService.addUser(user);
+		String returnString = null;
 
-		//userRolesService.addUserRole(userRoles);
+		if (result.hasErrors() & passwordC.isEmpty()) {
+			model.addAttribute("password2Error", "Confirm password must be field");
+			return "addUser";
+		}
 
-
-		//role = roleService.getRoleByName(2);
-		//user.setUserRoles().add(role);
-
-		if (password1.equals(password2)) {
-			for(UserRoles userRoles : user.getUserRoles()){
-				userRolesService.addUserRole(userRoles);
-				userService.addUser(user);
-				user.setUserRoles((List<UserRoles>) roleService.getRoleByName(2));
-				userService.editUser(user);
-			}
-//
-//			userRoles = roleService.getRoleByName(2);
-//
-//			user.set
-//
-//			user.userRoles.getRole().getRoleType()
-//			user.getUserRoles().add(roleService.getRoleByName(2));
-//			user.getRoles().add(roleService.getRoleByName(2));
-
+		if (password1.equals(passwordC)) {
+			userService.addUser(user);
+			UserRoles userRoles = new UserRoles();
+			userRoles.setUser(user);
+			userRoles.setRole(roleService.getRoleByName(1));
+			userRolesService.addUserRole(userRoles);
+			returnString = "redirect:/main";
 
 		} else {
-			System.out.println("qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
+
+			model.addAttribute("passwordsDontEquals", "Passwords don't equals");
+			returnString = "addUser";
 		}
-		return "redirect:/";
+
+		return returnString;
 	}
 
 
@@ -110,35 +97,6 @@ public class UserController extends GetUserName {
 			model.addAttribute("userName", super.getUserName());
 		}
 		return "user";
-	}
-
-
-
-	@RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
-	public String accessDeniedPage(ModelMap model) throws SQLException {
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-			model.addAttribute("userName", super.getUserName());
-		}
-		return "accessDenied";
-	}
-
-
-
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String loginPage() {
-		return "login";
-	}
-
-
-
-	@RequestMapping(value = "/logout", method = RequestMethod.POST)
-	public String logOut(HttpServletRequest request, HttpServletResponse response) {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if (authentication != null) {
-			new SecurityContextLogoutHandler().logout(request, response, authentication);
-		}
-		return "redirect:/";
 	}
 
 
@@ -181,53 +139,51 @@ public class UserController extends GetUserName {
 
 	@RequestMapping(value = "/info/edit/password", method = RequestMethod.GET)
 	public String editPassword(@ModelAttribute User user, Model model) throws SQLException {
-//		String login = super.getPrincipal();
-//		user = userService.getUserByLogin(login);
-//		model.addAttribute("userId", user);
 		return "editUserPassword";
 	}
 
 
 
 	@RequestMapping(value = "/info/edit/password", method = RequestMethod.POST)
-	public String postEditPass(@ModelAttribute User user, BindingResult result) {
-		if (result.hasErrors()) {
-			return "editUserPassword";
+	public String postEditPass(@Validated @ModelAttribute User user, BindingResult result,
+							   @RequestParam("password") String password, @RequestParam("newPassword") String newPassword,
+							   @RequestParam("confirmNewPassword") String confirmNewPassword, Model model) throws SQLException {
+		String login = super.getPrincipal();
+		user = userService.getUserByLogin(login);
+		String userPassword = user.getPassword();
+
+		String returnString = null;
+
+		if (!userPassword.equals(password)) {
+			String passwordMessage = "You have entered invalid password";
+			model.addAttribute("passwordMessage", passwordMessage);
+			returnString = "editUserPassword";
+
+		} else if (newPassword.isEmpty()) {
+			String newPassMessage = "New password field can not be empty";
+			model.addAttribute("newPassMessage", newPassMessage);
+			returnString = "editUserPassword";
+
+		} else if (confirmNewPassword.isEmpty()) {
+			String confirmPassMessage = "Confirm password field can not be empty";
+			model.addAttribute("confirmPassMessage", confirmPassMessage);
+			returnString = "editUserPassword";
+
+		} else if (!newPassword.equals(confirmNewPassword)) {
+			String notEqualsPasswords = "Passwords are not equals";
+			model.addAttribute("notEqualsPasswords", notEqualsPasswords);
+			returnString = "editUserPassword";
+
+		} else {
+			user.setPassword(newPassword);
+			userService.editUser(user);
+			returnString = "redirect:/info";
 		}
-		return "redirect:/info";
+
+		return returnString;
 	}
 
 
-
-//
-//
-//	@RequestMapping(value = "/info/edit/password/{id}", method = RequestMethod.POST)
-//	public String postEditPassword(@ModelAttribute User user, @RequestParam("currentPassword") String password,
-//								   @RequestParam("newPSWRD") String newPassword, Model model,
-//								   @RequestParam("cnfrmPSWRD") String confirmPassword) throws SQLException {
-//
-//		String login = super.getPrincipal();
-//		user = userService.getUserByLogin(login);
-//		if (password.equals(user.getPassword())) {
-//			if (newPassword.equals(confirmPassword)) {
-//				userService.editUser(user);
-//			} else {
-//				String nonEqualsPasswords = "Your confirm password is not equal new password";
-//				model.addAttribute("message2", nonEqualsPasswords);
-//				return "editUserPassword";
-//			}
-//		} else {
-//			String invalidCurrentPassword = "You have enter invalid current password";
-//			model.addAttribute("message1", invalidCurrentPassword);
-//			return "editUserPassword";
-//		}
-//
-//		System.out.println(password);
-//		System.out.println(newPassword);
-//		System.out.println(confirmPassword);
-//		return "redirect:/info";
-//
-//	}
 }
 
 

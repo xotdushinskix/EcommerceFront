@@ -28,7 +28,7 @@
             <th>MPN</th>
             <th>Bought quantity</th>
             <th>Edit line</th>
-            <th>Delete line/th>
+            <th>Delete line</th>
         </tr>
         </thead>
         <tbody>

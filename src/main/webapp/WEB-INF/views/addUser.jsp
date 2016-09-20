@@ -14,11 +14,41 @@
 <body>
 
 <form:form action="${pageContext.request.contextPath}/registration" modelAttribute="user" method="post">
-  First Name: <form:input path="firstName" /><br>
-  Second Name: <form:input path="lastName" /><br>
-  Login: <form:input path="login" /><br>
-  Password: <form:password path="password" /><br>
-  <input type="submit" value="Add" />
+  <table>
+    <tr>
+      <td>First Name:</td>
+      <td><form:input path="firstName"/></td>
+      <td><form:errors path="firstName"/></td>
+    </tr>
+
+    <tr>
+      <td>Second Name:</td>
+      <td><form:input path="lastName"/></td>
+      <td><form:errors path="lastName"/></td>
+    </tr>
+
+    <tr>
+      <td>Login:</td>
+      <td><form:input path="login"/></td>
+      <td><form:errors path="login"/></td>
+    </tr>
+
+    <tr>
+      <td>Password:</td>
+      <td><form:password path="password"/></td>
+      <td><form:errors path="password"/></td>
+    </tr>
+
+    <tr>
+      <td>Confirm password:</td>
+      <td><input type="password" name="passwordC"/></td>
+      <td>${password2Error}</td>
+      <td>${passwordsDontEquals}</td>
+    </tr>
+
+    </table>
+
+  <input type="submit" value="Registration" />
 </form:form>
 </body>
 </html>
