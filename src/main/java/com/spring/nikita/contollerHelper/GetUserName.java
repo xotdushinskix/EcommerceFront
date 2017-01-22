@@ -1,18 +1,18 @@
-package com.spring.nikita.controller;
+package com.spring.nikita.contollerHelper;
 
 import com.spring.nikita.model.User;
 import com.spring.nikita.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 import java.sql.SQLException;
 
 /**
  * Created by nikita on 05.09.16.
  */
-@Controller
+@Component
 public class GetUserName {
 
     @Autowired
